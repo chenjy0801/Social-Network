@@ -8,5 +8,9 @@
   		<result name = "success">/loginSuccess.jsp</result>
   		<result name = "input">/index.jsp</result>
   	</action>
+  	<action name = "register" class = "com.eduonix.socialnetwork.action.RegisterAction">
+  		<result name = "success">/index.jsp</result>
+  		<result name = "input">/register.jsp</result>
+  	</action>
   </package>
 </struts>

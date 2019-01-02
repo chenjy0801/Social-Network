@@ -4,6 +4,7 @@ import com.eduonix.socialnetwork.model.User;
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -12,6 +13,7 @@ import com.eduonix.socialnetwork.dao.UserDAO;
 public class LoginAction extends ActionSupport {
 	
 	private User user;
+	private Map<String,Object> userSession;
 	@Override 
 	public void validate() {
 		
@@ -31,6 +33,8 @@ public class LoginAction extends ActionSupport {
 		}
 		
 		this.user=users.get(0);		
+		userSession.put("user", this.user);
+		dao.close();
 	}
 	
 	@Override
