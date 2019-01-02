@@ -1,5 +1,8 @@
 package com.eduonix.socialnetwork.dao;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -20,6 +23,13 @@ public class UserDAO {
 		session.beginTransaction();
 		session.save(user);
 		session.getTransaction().commit();
+	}
+	
+	public List<User> getUserByName(String name){
+		List users= session.createQuery("from User where name = :name").setParameter("name", name).list();
+		
+		return users;
+		
 	}
 	
 	public void close() {

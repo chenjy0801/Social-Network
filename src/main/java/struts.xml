@@ -6,6 +6,7 @@
   <package name = "AccountSystem" extends = "struts-default">
   	<action name = "login" class = "com.eduonix.socialnetwork.action.LoginAction">
   		<result name = "success">/loginSuccess.jsp</result>
+  		<result name = "input">/index.jsp</result>
   	</action>
   </package>
 </struts>
